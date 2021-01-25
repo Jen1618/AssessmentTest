@@ -1,9 +1,10 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class assessmentTest {
-		
+	
+	//This creates the robot and performs the task of taking the order from the customer
+	
 	static class Robot{
 		
 		private int robotId;
@@ -20,7 +21,7 @@ public class assessmentTest {
 			}
 
 		}
-		
+				
 		public boolean takeOrder(Orders order){
 			Customer customer = order.getCustomer();
 			boolean isDone = customer.check(order.totalPrice());
@@ -37,7 +38,7 @@ public class assessmentTest {
 			}
 			return isDone;
 		}
-		
+				
 		public void prepare(){
 			for(int i=0; i<orders.size(); i++){
 				Orders order = orders.get(i);
@@ -55,6 +56,8 @@ public class assessmentTest {
 	}
 
 	static class Chef{
+		
+	//This class creates the Chef that will receive the order from the robot and the completion of the order is done here	
 		
 		private int itemId;
 		private String itemName;
@@ -121,6 +124,8 @@ public class assessmentTest {
 	}
 	
 	
+	//This takes in the information of the customer and any previous balance they may have had
+	
 	static class Customer{
 		private int customerId;
 		private double starter;
@@ -149,6 +154,8 @@ public class assessmentTest {
 		}
 		
 	}
+	
+	//This is more specific on what happens after the robot has gotten the order from the customer and sends it to the Chef
 	
 	static class Orders{
 		private Customer customer;
@@ -183,7 +190,3 @@ public class assessmentTest {
 		}
 	}	
 }
-	
-
-
-
